@@ -7,12 +7,12 @@ void    ft_putchar(char c)
 
 void    ft_print_numbers(void)
 {
-    char alphabet;
+    int alphabet;
 
-    alphabet = '0';
-    while(alphabet <= '9')
+    alphabet = 0;
+    while(alphabet <= 9)
     {
-        ft_putchar(alphabet);
+        ft_putchar('0' + alphabet);
         alphabet++;
     }
 }
