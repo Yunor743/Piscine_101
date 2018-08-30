@@ -1,6 +1,11 @@
 
 
+void ft_print_alphabet(void)
+{
+
+}
+
 int main()
 {
-    /*on codera ici*/
+    ft_print_alphabet();
 }
