@@ -5,12 +5,12 @@ void    ft_putchar(char c)
     write(1, &c, 1);
 }
 
-void    ft_print_numbers(void)
+void    ft_print_alphabet(void)
 {
     char alphabet;
 
-    alphabet = '0';
-    while(alphabet <= '9')
+    alphabet = 'a';
+    while(alphabet <= 'z')
     {
         ft_putchar(alphabet);
         alphabet++;
@@ -18,5 +18,5 @@ void    ft_print_numbers(void)
 }
 int main()
 {
-    ft_print_numbers();
+    ft_print_alphabet();
 }
