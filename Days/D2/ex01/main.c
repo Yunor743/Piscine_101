@@ -1,4 +1,3 @@
-
 #include <unistd.h>
 
 void    ft_putchar(char c)
@@ -6,18 +5,18 @@ void    ft_putchar(char c)
     write(1, &c, 1);
 }
 
-void    ft_print_alphabet(void)
+void    ft_print_reverse_alphabet(void)
 {
     char alphabet;
 
-    alphabet = 'a';
-    while(alphabet <= 'z')
+    alphabet = 'z';
+    while(alphabet >= 'a')
     {
         ft_putchar(alphabet);
-        alphabet++;
+        alphabet--;
     }
 }
 int main()
 {
-    ft_print_alphabet();
+    ft_print_reverse_alphabet();
 }
