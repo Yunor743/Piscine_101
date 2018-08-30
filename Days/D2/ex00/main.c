@@ -13,10 +13,11 @@ void    ft_print_alphabet(void)
     alphabet = 'a';
     while(alphabet <= 'z')
     {
-        
+        ft_putchar(alphabet);
+        alphabet++;
     }
 }
 int main()
 {
-    /*on codera ici*/
+    ft_print_alphabet(void);
 }
