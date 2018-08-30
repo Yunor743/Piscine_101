@@ -8,7 +8,13 @@ void    ft_putchar(char c)
 
 void    ft_print_alphabet(void)
 {
-    int al
+    char alphabet;
+
+    alphabet = 'a';
+    while(alphabet <= 'z')
+    {
+        ft
+    }
 }
 int main()
 {
