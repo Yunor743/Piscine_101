@@ -13,7 +13,7 @@ void ft_print_comb2(void)
     int third_nrb = 0;
     int fourth_nrb = 0;
 
-    /*tant que l valeur atteinte n'est pas 98 99*/
+    /*tant que la valeur atteinte n'est pas 98 99*/
     while(first_nbr != 9 || second_nbr != 8 || third_nrb != 9 || fourth_nrb != 9)
     {
         /*Si le  LSB atteind la valeur 99 on incrémente le MSB*/
