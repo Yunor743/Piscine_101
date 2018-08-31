@@ -15,7 +15,7 @@ void ft_print_comb (void)
     
     while(first_digit <= 7)
     {
-        while(third_digit <= 9)
+        while(second_digit <= 8)
         {
             while(third_digit <= 9)
             {
