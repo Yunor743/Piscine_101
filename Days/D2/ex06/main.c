@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdlib.h>
 
 void    ft_putchar(char c)
 {
@@ -7,27 +8,31 @@ void    ft_putchar(char c)
 
 void    ft_putnbr(int nb)
 {
-    long long i;
-
-    i = nb;
-    if (i < 0)
+    if (nb < 0)
     {
         ft_putchar('-');
-        i = i * -1;
+        nb = nb * -1;
     }
-    if (i > 9)
+    if (nb > 9)
     {
-        ft_putnbr(i / 10);
-        ft_putnbr(i % 10);
+        ft_putnbr(nb / 10);
+        ft_putnbr(nb % 10);
     }
     else
     {
-        ft_putchar('0' + i);
+        ft_putchar('0' + nb);
     }
 }
 
-int main()
+int main(int argc, char **argv)
 {
-    ft_putnbr(2147483648);
+    if (argc != 2)
+    {
+        write(1, "Un et un seul argument", 22);
+    }
+    else
+    {
+            ft_putnbr(atoi(argv[1]));
+    }
     return (0);
 }
