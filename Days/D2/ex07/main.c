@@ -9,7 +9,7 @@ void ft_putchar(char c)
 
 /*cette fonction permet de traiter la valeur et renvoi un string des valeur organiser sur n colones,
  elle renvoi 1 si elle ne peut plus continuer sinon elle renvoie 0*/
-int wlf_process_value(char* storage, int value)
+int wlf_process_value(char* storage, int value, int digits)
 {
 
     return 0;
@@ -35,7 +35,7 @@ void ft_print_combn(int n)
     while(!stop)
     {
         value++;
-        stop = wlf_process_value(&storage[0], value);
+        stop = wlf_process_value(&storage[0], value, n);
         wlf_disp(&storage[0], n);
         if(!stop)
         {
