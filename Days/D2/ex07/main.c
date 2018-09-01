@@ -11,18 +11,56 @@ void ft_putchar(char c)
  elle renvoi 1 si elle ne peut plus continuer sinon elle renvoie 0*/
 int wlf_process_value(char* storage, int value, int digits)
 {
+    int actual_digit = 0;
+    int val_process[digits];
+    int i = 0; //me servira de compteur
 
-    return 0;
+    /*On initialise tous les digits de notre tableau a 0*/
+    while(i < digits)
+    {
+        val_process[i] = 0;
+        i++;
+    }
+    
+    while(value > 0)
+    {
+        val_process[actual_digit]++;
+        value--;
+        if(val_process[actual_digit] > 9)
+        {
+            actual_digit++;
+            val_process[actual_digit]++;
+            val_process[actual_digit-1] = val_process[actual_digit]+1;
+            actual_digit = 0;
+        }
+    }
+    
+    /*On cast val_process vers storage*/
+    i = 0;
+    while(i < digits)
+    {
+        storage[i] = val_process[i]+48;
+        i++;
+    }
+    /*on défini la valeur renvoyée*/
+    if(val_process[0] < 10)   //condition a modifier
+    {
+        return 0;
+    }
+    else
+    {
+        return 1;
+    }
 }
 
 /*on affiche le string*/
 void wlf_disp(char *storage, int digits)
 {
-    int compteur = 0;
-    while(compteur <= digits)
+    int compteur = digits - 1;
+    while(compteur >= 0)
     {
         ft_putchar(storage[compteur]);
-        compteur++;
+        compteur--;
     }
 }
 
@@ -36,11 +74,14 @@ void ft_print_combn(int n)
     {
         value++;
         stop = wlf_process_value(&storage[0], value, n);
-        wlf_disp(&storage[0], n);
-        if(!stop)
+        if(!stop && value > 1)
         {
             ft_putchar(',');
             ft_putchar(' ');
+        }
+        if(!stop)
+        {
+            wlf_disp(&storage[0], n);
         }
     } 
 }
